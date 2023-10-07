@@ -25,8 +25,12 @@ class Home extends StatelessWidget {
           child: Image.asset('assets/taxi.png'),
         ),
         Text(
-          "E-hailing Service",
-          style: TextStyle(fontSize: 40),
+          "Boda-Boda Service",
+          style: TextStyle(
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
+            color: Colors.teal[600],
+          ),
         ),
         SizedBox(
           height: 30,
@@ -46,7 +50,7 @@ class Home extends StatelessWidget {
           height: 60,
           width: 350,
           decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.white12,
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
@@ -59,9 +63,9 @@ class Home extends StatelessWidget {
           child: Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.only(left: 20.0),
+              padding: EdgeInsets.only(left: 20.0),
               child: Text(
-                "+60-XXXXXXXXX",
+                "+254-XXXXXXXXX",
                 style: TextStyle(fontSize: 20),
               ),
             ),
@@ -78,20 +82,29 @@ class Home extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.teal[300],
               borderRadius: BorderRadius.circular(20),
+              /*  boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.35),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    blurStyle: BlurStyle.inner,
+                    offset: Offset(0, 3),
+                  ),
+                ]*/
             ),
             child: Center(
                 child: Text(
               "Book a ride",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 20,
+                fontSize: 25,
                 fontWeight: FontWeight.bold,
               ),
             )),
           ),
         ),
         SizedBox(
-          height: 10,
+          height: 15,
         ),
         Text(
           "More",
