@@ -38,13 +38,13 @@ class Home extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: Text(
-            "Welcome! Take a ride to your destination with the cheapest fare",
+            "Twende Nyumbani!",
             style: TextStyle(fontSize: 30),
             textAlign: TextAlign.center,
           ),
         ),
         SizedBox(
-          height: 50,
+          height: 40,
         ),
         Container(
           height: 60,
@@ -104,7 +104,7 @@ class Home extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 15,
+          height: 30,
         ),
         Text(
           "More",

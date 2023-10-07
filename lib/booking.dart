@@ -10,9 +10,9 @@ class Booking extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Booking"),
-        backgroundColor: Colors.tealAccent[300],
-        elevation: 0,
-        toolbarHeight: 100,
+        backgroundColor: Colors.teal[600],
+        elevation: 8,
+        toolbarHeight: 60,
       ),
       body: content(context),
     );
@@ -36,24 +36,24 @@ class Booking extends StatelessWidget {
           ),
           Text(
             "History",
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 10,
           ),
-          locationInputField("No XX,XXXXX", true),
+          locationInputField("Masaba", true),
           SizedBox(
             height: 20,
           ),
-          locationInputField("XXX Mall", true),
+          locationInputField("Ikerege", true),
           SizedBox(
             height: 20,
           ),
-          locationInputField("Garden XXX", true),
+          locationInputField("Kehancha", true),
           SizedBox(
             height: 20,
           ),
-          locationInputField("Texas Road XXX", true),
+          locationInputField("Maeta", true),
           SizedBox(
             height: 50,
           ),
