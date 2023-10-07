@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
@@ -8,22 +8,22 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: content(),
+      body: content(context),
     );
   }
 
-  Widget content() {
+  Widget content(BuildContext context) {
     return Column(
       children: [
         SizedBox(
           height: 45,
         ),
-        Container(
+        SizedBox /*replaces container*/ (
           width: double.infinity,
           height: 300,
           child: Image.asset('assets/taxi.png'),
         ),
-        Text(
+        const Text(
           'E-Hailing Service',
           style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -31,11 +31,11 @@ class Home extends StatelessWidget {
             fontStyle: FontStyle.italic,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
-        Padding(
-          padding: const EdgeInsets.all(20.0),
+        const Padding(
+          padding: EdgeInsets.all(20.0),
           child: Text(
             'Welcome! Take a ride to your destination with the cheapest fare',
             style: TextStyle(
@@ -46,7 +46,7 @@ class Home extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 50,
         ),
         Container(
@@ -61,13 +61,13 @@ class Home extends StatelessWidget {
                   spreadRadius: 5,
                   blurRadius: 7,
                   blurStyle: BlurStyle.inner,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ]),
-          child: Align(
+          child: const Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.only(left: 20.0),
+              padding: EdgeInsets.only(left: 20.0),
               child: Text(
                 '+254-XXXXXXXXX',
                 style: TextStyle(fontSize: 20),
@@ -75,26 +75,29 @@ class Home extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
-          height: 80,
+        const SizedBox(
+          height: 70,
         ),
-        Container(
-          height: 60,
-          width: 350,
-          decoration: BoxDecoration(
-            color: Colors.amber[600],
-            borderRadius: BorderRadius.circular(20),
-            /*  boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.35),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  blurStyle: BlurStyle.inner,
-                  offset: Offset(0, 3),
-                ),
-              ]*/
-          ),
-          child: Center(
+        GestureDetector(
+          onTap: (() => Navigator.of(context).pushNamed('/booking')),
+        ),
+        Center(
+          child: Container(
+            height: 60,
+            width: 350,
+            decoration: BoxDecoration(
+              color: Colors.teal[300],
+              borderRadius: BorderRadius.circular(20),
+              /*  boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.35),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    blurStyle: BlurStyle.inner,
+                    offset: Offset(0, 3),
+                  ),
+                ]*/
+            ),
             child: Text(
               'Book A Ride',
               style: TextStyle(

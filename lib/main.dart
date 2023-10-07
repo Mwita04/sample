@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:sample/home.dart';
+import 'booking.dart';
+import 'home.dart';
 
 void main() => runApp(
       MaterialApp(
+        debugShowCheckedModeBanner: false,
+        //initialRoute: '/booking',
         routes: {
           '/': ((context) => const Home()),
+          '/booking': ((context) => const Booking()),
         },
       ),
     );
