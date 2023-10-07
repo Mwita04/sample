@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'booking.dart';
 import 'home.dart';
@@ -7,8 +9,8 @@ void main() => runApp(
         debugShowCheckedModeBanner: false,
         //initialRoute: '/booking',
         routes: {
-          '/': ((context) => const Home()),
-          '/booking': ((context) => const Booking()),
+          '/': ((context) => Home()),
+          '/booking': ((context) => Booking()),
         },
       ),
     );

@@ -9,33 +9,25 @@ class Booking extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          "Booking",
-        ),
-        backgroundColor: Colors.teal[300],
+        title: Text("Booking"),
+        backgroundColor: Colors.tealAccent[300],
         elevation: 0,
-        toolbarHeight: 70,
-        //toolbarOpacity: 1,
-        /* leading: IconButton(
-          icon: Icon(Icons.keyboard_return_rounded),
-          onPressed: () {},
-        ),*/ // Adds a leading button
+        toolbarHeight: 100,
       ),
-      body: content(),
+      body: content(context),
     );
   }
 
-  Widget content() {
+  Widget content(BuildContext context) {
     return Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
+          SizedBox(
             height: 40,
           ),
           locationInputField("From?", false),
-          const SizedBox(
+          SizedBox(
             height: 20,
           ),
           locationInputField("To?", false),
@@ -44,47 +36,47 @@ class Booking extends StatelessWidget {
           ),
           Text(
             "History",
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(fontSize: 25),
           ),
           SizedBox(
             height: 10,
           ),
-          locationInputField("Ntimaru Pefa ", true),
+          locationInputField("No XX,XXXXX", true),
           SizedBox(
             height: 20,
           ),
-          locationInputField("Kehancha Hospital ", true),
+          locationInputField("XXX Mall", true),
           SizedBox(
             height: 20,
           ),
-          locationInputField("Kegonga ", true),
+          locationInputField("Garden XXX", true),
           SizedBox(
             height: 20,
           ),
-          locationInputField("Ikerege ", true),
+          locationInputField("Texas Road XXX", true),
           SizedBox(
             height: 50,
           ),
-          Container(
-            height: 60,
-            width: 350,
-            decoration: BoxDecoration(
-              color: Colors.teal[300],
-              borderRadius: BorderRadius.circular(28),
-            ),
-            child: Center(
-              child: Text(
-                "Confirm Booking",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
+          GestureDetector(
+            onTap: (() => Navigator.of(context).pushNamed('/paymentMethod')),
+            child: Container(
+              height: 60,
+              width: 350,
+              decoration: BoxDecoration(
+                color: Colors.teal[300],
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Center(
+                child: Text(
+                  "Confirm booking",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
             ),
-          ),
+          )
         ],
       ),
     );
@@ -93,18 +85,17 @@ class Booking extends StatelessWidget {
 
 Widget locationInputField(String title, bool isHistory) {
   return Container(
-    height: 50,
-    width: 380,
+    height: 60,
+    width: 350,
     decoration: BoxDecoration(
-        color: Colors.white30,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: const Offset(0, 3),
-          ),
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3))
         ]),
     child: Align(
       alignment: Alignment.centerLeft,
@@ -114,7 +105,7 @@ Widget locationInputField(String title, bool isHistory) {
           children: [
             isHistory
                 ? Icon(
-                    Icons.location_on_outlined,
+                    Icons.location_on,
                     color: Colors.green,
                   )
                 : Icon(
@@ -122,7 +113,7 @@ Widget locationInputField(String title, bool isHistory) {
                     color: title.contains('From') ? Colors.grey : Colors.blue,
                   ),
             SizedBox(
-              width: 50,
+              width: 20,
             ),
             Text(
               title,
