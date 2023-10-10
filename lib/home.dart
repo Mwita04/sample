@@ -82,15 +82,15 @@ class Home extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.teal[300],
               borderRadius: BorderRadius.circular(20),
-              /*  boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.35),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    blurStyle: BlurStyle.inner,
-                    offset: Offset(0, 3),
-                  ),
-                ]*/
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.35),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  blurStyle: BlurStyle.inner,
+                  offset: Offset(0, 3), 
+                ),
+              ],
             ),
             child: Center(
                 child: Text(
