@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'settings.dart';
+
 class PaymentMethod extends StatelessWidget {
   const PaymentMethod({super.key});
 
@@ -14,9 +16,20 @@ class PaymentMethod extends StatelessWidget {
         ),
         backgroundColor: Colors.teal[600],
         elevation: 8,
-        toolbarHeight: 60,
+        toolbarHeight: 70,
         actions: [
-          Icon(Icons.settings),
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Settings()));
+              },
+              splashColor: Colors.yellowAccent.shade100,
+              splashRadius: 30,
+              icon: Icon(Icons.settings),
+            ),
+          ),
           SizedBox(
             height: 20,
           ),
