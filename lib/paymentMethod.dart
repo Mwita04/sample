@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'settings.dart';
 
 class PaymentMethod extends StatelessWidget {
-  const PaymentMethod({super.key});
+  PaymentMethod({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +35,11 @@ class PaymentMethod extends StatelessWidget {
           ),
         ],
       ),
-      body: content(),
+      body: content(context),
     );
   }
 
-  Widget content() {
+  Widget content(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Column(
@@ -56,21 +56,26 @@ class PaymentMethod extends StatelessWidget {
           paymentMethod('Visa', "assets/visa.png"),
           SizedBox(height: 30),
           paymentMethod('Paypal', "assets/paypal.png"),
-          SizedBox(height: 40),
-          Container(
-            height: 60,
-            width: 250,
-            decoration: BoxDecoration(
-              color: Colors.teal.shade300,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Center(
-              child: Text(
-                "Continue",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
+          SizedBox(
+            height: 50,
+          ),
+          GestureDetector(
+            onTap: () => Navigator.of(context).pushNamed('/summary'),
+            child: Container(
+              height: 60,
+              width: 250,
+              decoration: BoxDecoration(
+                color: Colors.teal.shade300,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Center(
+                child: Text(
+                  "Continue",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
