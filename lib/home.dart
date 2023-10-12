@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
@@ -8,27 +8,28 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: content(),
+      body: content(context),
     );
   }
 
-  Widget content() {
+  Widget content(BuildContext context) {
     return Column(
       children: [
         SizedBox(
-          height: 45,
+          height: 50,
         ),
+        // ignore: sized_box_for_whitespace
         Container(
           width: double.infinity,
           height: 300,
           child: Image.asset('assets/taxi.png'),
         ),
         Text(
-          'E-Hailing Service',
+          "Boda-Boda Service",
           style: TextStyle(
+            fontSize: 40,
             fontWeight: FontWeight.bold,
-            fontSize: 30,
-            fontStyle: FontStyle.italic,
+            color: Colors.teal[600],
           ),
         ),
         SizedBox(
@@ -37,17 +38,13 @@ class Home extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: Text(
-            'Welcome! Take a ride to your destination with the cheapest fare',
-            style: TextStyle(
-              //fontWeight: FontWeight.bold,
-              fontSize: 30,
-              //fontStyle: FontStyle.italic,
-            ),
+            "Twende Nyumbani!",
+            style: TextStyle(fontSize: 30),
             textAlign: TextAlign.center,
           ),
         ),
         SizedBox(
-          height: 50,
+          height: 40,
         ),
         Container(
           height: 60,
@@ -57,19 +54,18 @@ class Home extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.35),
+                  color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  blurStyle: BlurStyle.inner,
                   offset: Offset(0, 3),
-                ),
+                )
               ]),
           child: Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.only(left: 20.0),
+              padding: EdgeInsets.only(left: 20.0),
               child: Text(
-                '+254-XXXXXXXXX',
+                "+254-XXXXXXXXX",
                 style: TextStyle(fontSize: 20),
               ),
             ),
@@ -78,39 +74,42 @@ class Home extends StatelessWidget {
         SizedBox(
           height: 80,
         ),
-        Container(
-          height: 60,
-          width: 350,
-          decoration: BoxDecoration(
-            color: Colors.amber[600],
-            borderRadius: BorderRadius.circular(20),
-            /*  boxShadow: [
+        GestureDetector(
+          onTap: (() => Navigator.of(context).pushNamed('/booking')),
+          child: Container(
+            height: 60,
+            width: 350,
+            decoration: BoxDecoration(
+              color: Colors.teal[300],
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.35),
                   spreadRadius: 5,
                   blurRadius: 7,
                   blurStyle: BlurStyle.inner,
-                  offset: Offset(0, 3),
+                  offset: Offset(0, 3), 
                 ),
-              ]*/
-          ),
-          child: Center(
-            child: Text(
-              'Book A Ride',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold),
+              ],
             ),
+            child: Center(
+                child: Text(
+              "Book a ride",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
+            )),
           ),
         ),
         SizedBox(
-          height: 15,
+          height: 30,
         ),
         Text(
-          'More',
+          "More",
           style: TextStyle(color: Colors.blue),
-        ),
+        )
       ],
     );
   }
